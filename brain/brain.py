@@ -8,6 +8,7 @@ import stt
 import sys
 import subprocess
 import os
+import pyjokes
 
 # natural voice command parsing keywords
 T_KEYS = ['google', 'youtube', 'search', 'open', 'computer', 'radio', 'video']
@@ -310,7 +311,12 @@ class Brain:
 
 		elif command_type == "radio":
 			self.voice_cmd.play_music(job)
-
+			
+		elif command_type == "Jokes":
+			print(pyjokes.get_joke())
+		
+		elif command_type =="quit":
+			quit()
 		else:
 			self.voice_cmd.ask_wolfram(job)
 
